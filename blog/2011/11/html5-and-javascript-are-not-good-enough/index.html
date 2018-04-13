@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    HTML5 and Javascript Are Not Enough
+  
+</title>
+
+<meta name="description" content="The capabilities of today’s browsers are not sufficient for meeting the security needs of web applications requiring authentication and payments. One of the two primary deficiencies is that content fr">
+<meta name="keywords" content="security,identity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 and Javascript Are Not Enough">
+<meta property="og:url" content="http://jpravetz.bitbucket.io/blog/2011/11/html5-and-javascript-are-not-good-enough/index.html">
+<meta property="og:site_name" content="Jim Pravetz">
+<meta property="og:description" content="The capabilities of today’s browsers are not sufficient for meeting the security needs of web applications requiring authentication and payments. One of the two primary deficiencies is that content fr">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://jpravetz.bitbucket.io/images/posts/2011-11-22/FlashCard_Callouts.png">
+<meta property="og:image" content="http://jpravetz.bitbucket.io/images/posts/2011-11-22/easy_to_use.png">
+<meta property="og:updated_time" content="2018-04-12T22:06:49.960Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 and Javascript Are Not Enough">
+<meta name="twitter:description" content="The capabilities of today’s browsers are not sufficient for meeting the security needs of web applications requiring authentication and payments. One of the two primary deficiencies is that content fr">
+<meta name="twitter:image" content="http://jpravetz.bitbucket.io/images/posts/2011-11-22/FlashCard_Callouts.png">
+<meta name="twitter:creator" content="@jpravetz">
+
+
+  <link rel="alternative" href="/atom.xml" title="Jim Pravetz" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18367449-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Jim Pravetz</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Jim Pravetz</a></h1>
+    
+      <p class="subtitle">
+        Blog
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="/images/about/jim_agra_mug_160x160.jpg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIR/">AIR</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe/">Adobe</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BYOD/">BYOD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/">Facebook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Favourite-Place/">Favourite Place</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flex/">Flex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft/">Microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/">PDF</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/">PayPal</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playable/">Playable</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/">cycling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-signatures/">digital signatures</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drm/">drm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dropbox/">dropbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eDelivery/">eDelivery</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fail/">fail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/files/">files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/identity/">identity</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rails/">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regulation/">regulation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/">ruby</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scams/">scams</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlets/">servlets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strava/">strava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/">video</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualization/">virtualization</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/">2011</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/">2009</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/">2007</a><span class="archive-list-count">3</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/jpravetz" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-html5-and-javascript-are-not-good-enough" class="article article-type-post">
+  
+    <h1 class="article-header">
+      HTML5 and Javascript Are Not Enough
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2011-11-22
+</span>
+
+    
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/identity/">identity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/security/">security</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>The capabilities of today’s browsers are not sufficient for meeting the security needs of web applications requiring authentication and payments. One of the two primary deficiencies is that content from one site cannot be adequately sandbox when executed on a relying web site. Yet embedding such third party <em>micro-apps</em> has become commonplace. The second deficiency is the reliance on passwords, as is so eloquently described by <a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/" target="_blank" rel="noopener">this post from Eevee</a>.</p>
+<p>Take making a PayPal transaction at a merchant web site as an example of the first deficiency.  To make
+this work the merchant web site must <em>redirect</em> the user to PayPal’s web site
+where he or she then authenticates and authorizes the payment. The user is taken
+out of context, away from the merchant’s web site, with the possibility of being subject to phishing. This is done because any PayPal code running
+within the context of the merchant’s site would not be secure: PayPal
+and the merchant cannot isolate each other’s code.</p>
+<a id="more"></a>
+<p>There are other examples where this sandbox deficiency is apparent: <a href="http://openid.net/" target="_blank" rel="noopener">Open ID</a>, <a href="https://usa.visa.com/personal/security/vbv/index.jsp" target="_blank" rel="noopener">Verified by VISA</a> and <a href="http://securevaultpayments.com/" target="_blank" rel="noopener">Secure Vault Payments</a> (SVP ACH payments) are just a few. VBV and SVP are particularly jaring because the user is taken out of the context of their nice, modern web app, redirected to the archaic web site of some bank, then (hopefully) redirected back to complete the transaction.</p>
+<p>Amongst social media <a href="https://developers.facebook.com/blog/post/108/" target="_blank" rel="noopener">Facebook Connect</a> is the most common example; though sandboxing appears to be counter to Facebook’s data collection interests. Disqus too allows micro-app authentication. One might argue that passwords harvested from sites like Disqus have little value, but <a href="http://xkcd.com/792/" target="_blank" rel="noopener">think again</a>, they do.</p>
+<h3 id="Making-this-work-in-the-browser"><a href="#Making-this-work-in-the-browser" class="headerlink" title="Making this work in the browser"></a>Making this work in the browser</h3><p>In today’s browser you can run your 3rd party site code (micro-apps)  within an iframe. This programmatically isolates javascript code, but does not prevent stroke jacking (<em>a.k.a.</em> key logging) nor impersonation. The browser would need to guarantee that:</p>
+<ul>
+<li>key strokes intended for the micro-app are not intercepted by the host web page</li>
+<li>the micro-app’s user interface wasn’t being visually compromised by the host (for example by overlaying misleading UI)</li>
+<li>the micro-app is not from a phisher</li>
+</ul>
+<p>The only secure way to make this work is to put the 3rd party content in it’s own browser window. This way  the code and UI are isolated from the host application and the browser’s address bar can show the SSL security status of the micro-app. A problem is that API communications between the host page and micro-app is then limited to URLs and the user experience suffers.</p>
+<h3 id="How-this-could-work"><a href="#How-this-could-work" class="headerlink" title="How this could work"></a>How this could work</h3><p>When I ran the security group for Adobe Acrobat we had a number of customers tell us that they would have liked to have taken the credential solutions that we were using in Acrobat and made them available to improve authentication within the browser. A pharmaceutical company could then have an employee login to a web site using the same managed credentials that they used to sign PDF files. </p>
+<p>This sounds very much like an OS-level function that all applications on the platform should have access to, and yet the OS and browser vendors continued to build isolated security stacks and did not manage to improve browser user authentication. 
+At Adobe we were pondering ways of filling this void and enabling Acrobat credentials to be used in the browser (via a plugin) when Adobe and Macromedia merged.</p>
+<p>Macromedia Flash presented a new opportunity for my group. If we could expose strong credentials via both the Flash runtime and Acrobat Reader we would have near ubiquitous reach. Flash had a number of very special characteristics:</p>
+<ul>
+<li>Code from one site could be bundled and run in a secure sandbox on another web site</li>
+<li>Flash could be used to present a slick, top-of-screen user interface that could not be spoofed</li>
+<li>Flash could be enhanced to provide access to the operating system for secure key storage</li>
+</ul>
+<p>Add in the promise of <a href="http://www.adobe.com/products/air.html" target="_blank" rel="noopener">Adobe AIR</a> and we had the opportunity to deliver credentials that could be used across a large range of applications. Even native apps could be extended to load and run Flash apps.</p>
+<p>Let’s look at why this would have been valuable. Imagine if a merchant could expose a PayPal <em>widget</em> (rectangle of UI) right within the merchant’s own web site without the need for a redirect.
+The widget would have access to the user’s PayPal credentials that had previously been activated on the user’s machine, and so PayPal could use strong, non-spoofable authentication for the transaction.</p>
+<img src="/images/posts/2011-11-22/FlashCard_Callouts.png">
+<p>The widget would be top of screen and use <em>security indicators</em> to provide a <em>safe</em> user interface that the user would trust to complete the transaction, much like a POS device at a grocery store is trusted.
+Security indicators are fragments of UI that the user has previously configured to ensure that the widget was not being spoofed. <a href="http://www.bankofamerica.com/privacy/index.cfm?template=sitekey" target="_blank" rel="noopener">SiteKey</a> is an example of a security indicator mechanism, though not a very good one. Widget participants would also be white listed via a separate mechanism then is used by today’s browsers thus eliminating phishing and the need for users to distinguish SSL or EVSSL sites.</p>
+<p>This same widget could be used again when the user authenticated at the PayPal web site, or to authenticate within a PayPal desktop application. A bank could use the widget to increase the strength of authentication at their site, replacing the need for SiteKey. They could then use the same widget to enable user’s to sign a mortgage agreement either offline within Acrobat, or online on a web site via the Flash widget. The widget could be embedded within a shopping cart applications, either Flash or javascript based, that could then be embedded on a small merchant’s web site (similar to the <a href="http://checkout.google.com/sell" target="_blank" rel="noopener">Google Checkout</a> experience).</p>
+<img src="/images/posts/2011-11-22/easy_to_use.png">
+<p>The in-page experience, sandboxing of code and user interface, and the ability to prevent spoofing, were the most important aspects of this solution. I created a project called <em>Flashcard</em> within Adobe’s <em>Advanced Technology Labs</em> that proved the concept’s preliminary technical feasibility. All that was needed was an additional 50K of code in Flash to make it happen. We would have allowed companies to build their own widgets, but to improve adoption we were proposing a standardized <em>Flashcard</em> wallet that all could use.</p>
+<p>Microsoft had a similar technology called Cardspace, but the user experience was seriously lacking and it seemed obvious that the solution was overweight and had little chance of success.
+Open ID was started at about the same time as we were looking at Flashcard, but again the complexity of redirects and poor user experience predictably killed it.
+Adobe’s CTO Kevin Lynch had different priorities at the time and chose not to pursue Flashcard.</p>
+<h3 id="And-then-there’s-the-problem-of-passwords"><a href="#And-then-there’s-the-problem-of-passwords" class="headerlink" title="And then there’s the problem of passwords"></a>And then there’s the problem of passwords</h3><p>As <a href="http://me.veekun.com/blog/2011/12/04/fuck-passwords/" target="_blank" rel="noopener">Eevee’s post on passwords</a> points out, there do exist good models for authentication. Techies use <a href="http://en.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="noopener">SSH</a> and private key cryptography every day to login to remote sites and do serious work. The use of private keys actually makes life easier because the user doesn’t need to remember and maintain passwords, and they can use the same private key to authenticate to any number of sites. What is needed to make this work for browsers is a <em>ubiquitous and functionally complete</em> secured lockbox such as Mac OS X’s keychain, or Microsoft Windows’s DPAPI.</p>
+<p>What I mean by ubiquitous and functionally complete is that a web site author can actually count on the technology existing across browsers and for it to deliver the type of key lifecycle management features that a web site needs.
+This too was a part of Flashcard. Flashcard was to provide a an authenticated key store, available across browsers and platforms, that could store private keys and other types of tokens and assertions.</p>
+<h3 id="Not-much-to-look-forward-to"><a href="#Not-much-to-look-forward-to" class="headerlink" title="Not much to look forward to"></a>Not much to look forward to</h3><p>I am not suggesting that FlashCard itself was the answer to all of these problems. FlashCard was a concept that had not yet been fully explored. I am suggesting that there is in fact a better way to do authentication, and that there is value in providing a code and UI isolated mechanism that provides a better bridge between micro-apps and host pages.</p>
+<blockquote class="pullquote"><p>The problems of relying on passwords, inadequate sandboxing and use of redirects continues to exist in the browser and I see no solutions on the horizon. The best hope is if one of the browser manufacturers works out a binary solution and steps up to propose a standard. Even better is if an OS vendor could be brought on board to make the solution available to mobile and desktop apps as well as web apps. In today’s market the only two companies who can achieve this success are Google and Apple, with an outside chance of Mozilla acting an instigator. Unfortunately, as Eevee writes in regard to passwords, “{“Nobody with the resources to pull off something usable is inclined to do so”}.”</p>
+</blockquote>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2007-2018 Jim Pravetz - Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

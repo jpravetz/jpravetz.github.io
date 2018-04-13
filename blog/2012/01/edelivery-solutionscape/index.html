@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Solving e-delivery: Solutionscape
+  
+</title>
+
+<meta name="description" content="This is part four of a series on e-delivery: &amp;lt;%- partial_page(‘_partials/edelivery-index.html’) %&amp;gt; In my previous post I looked at the requirements for an e-delivery solution. That post hinted a">
+<meta name="keywords" content="security,eDelivery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solving e-delivery: Solutionscape">
+<meta property="og:url" content="http://jpravetz.bitbucket.io/blog/2012/01/edelivery-solutionscape/index.html">
+<meta property="og:site_name" content="Jim Pravetz">
+<meta property="og:description" content="This is part four of a series on e-delivery: &amp;lt;%- partial_page(‘_partials/edelivery-index.html’) %&amp;gt; In my previous post I looked at the requirements for an e-delivery solution. That post hinted a">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://jpravetz.bitbucket.io/images/posts/2012-01/cayoexpress.png">
+<meta property="og:updated_time" content="2018-04-13T05:52:42.649Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Solving e-delivery: Solutionscape">
+<meta name="twitter:description" content="This is part four of a series on e-delivery: &amp;lt;%- partial_page(‘_partials/edelivery-index.html’) %&amp;gt; In my previous post I looked at the requirements for an e-delivery solution. That post hinted a">
+<meta name="twitter:image" content="http://jpravetz.bitbucket.io/images/posts/2012-01/cayoexpress.png">
+<meta name="twitter:creator" content="@jpravetz">
+
+
+  <link rel="alternative" href="/atom.xml" title="Jim Pravetz" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18367449-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Jim Pravetz</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Jim Pravetz</a></h1>
+    
+      <p class="subtitle">
+        Blog
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="/images/about/jim_agra_mug_160x160.jpg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIR/">AIR</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe/">Adobe</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BYOD/">BYOD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/">Facebook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Favourite-Place/">Favourite Place</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flex/">Flex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft/">Microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/">PDF</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/">PayPal</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playable/">Playable</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/">cycling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-signatures/">digital signatures</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drm/">drm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dropbox/">dropbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eDelivery/">eDelivery</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fail/">fail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/files/">files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/identity/">identity</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rails/">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regulation/">regulation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/">ruby</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scams/">scams</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlets/">servlets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strava/">strava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/">video</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualization/">virtualization</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/">2011</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/">2009</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/">2007</a><span class="archive-list-count">3</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/jpravetz" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-edelivery-solutionscape" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Solving e-delivery: Solutionscape
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2012-01-09
+</span>
+
+    
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eDelivery/">eDelivery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/security/">security</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>This is part four of a series on e-delivery:</p>
+<p>&lt;%- partial_page(‘_partials/edelivery-index.html’) %&gt;</p>
+<p>In my previous post I looked at the <a href="/blog/2012/01/edelivery-requirements">requirements</a> for an e-delivery solution. That post hinted at the need for standards so that businesses could future-proof whatever solutions they adopt.
+I discussed the existing cloud-centric solutions in a bit of detail in my post <a href="/blog/2012/01/edelivery-of-statements-broken">Statement E-Delivery is Broken</a>. In this post I dig a little deeper and look at what constraints and trends  businesses should consider and how they should future-proof their solutions.</p>
+<a id="more"></a>
+<p>Let’s further consider a cloud-based aggregation site as exemplified by <a href="http:doxo.com" target="_blank" rel="noopener">Doxo</a>, <a href="http://manilla.com" target="_blank" rel="noopener">Manilla</a> and <a href="http://volly.com" target="_blank" rel="noopener">Volly</a>. You need to ask if these sites meet your business needs and are likely to be popular enough with consumers to justify an integration effort. I argued in my <a href="/blog/2012/01/edelivery-of-statements-broken">Statement E-Delivery is Broken</a> post that these sites will not be popular with consumers. But do they even meet your business needs?</p>
+<p>As we talked about in the  <a href="/blog/2012/01/edelivery-requirements">requirements</a>, the channel to your customer probably needs to support multiple end-points (email and document delivery, notifications, promotions, links to your web site, <em>etc.</em>). Do cloud aggregators support enough of these end-points? Does the solution give you enough <em>presence</em>, meaning if you post something to one of these services, will the user see it in a timely manner? Do you feel your business is disenfranchised or enriched when your customer engages with you via this cloud service? </p>
+<p>Now consider how technology will look in 10 years. Which of the existing cloud-centric solutions will exist at that point, and what will their roles be? What external factors may affect their business? If you need to pick a winner, how do you do this? Do you write and maintain API solutions for every one of these services? Will user’s want to store their archival documents at these sites for 10, 20 or more years? What is the half life of the average cloud service? How can we be sure users will continue to be in control of their content? Where do your consumers want to maintain their records?</p>
+<p>Let me tell you what I think the answers are to some of these questions. First most of these cloud-centric solutions will not exist in 10 years simply because of competition and the rapid pace of technology change.  There may be some winners amongst them, presumably the ones that best adapt to change, and assuming that what they deliver as their core value is not disrupted. So you need to maintain some flexibility.</p>
+<p> I suggest that cloud storage will become centralized at larger storage providers in the sense that (i) users will  want to specify where their content is stored, with backup and sync being main requirements, and demand less storage fragmentation (ii) different cloud services in the future will respond by allowing users to choose their favorite cloud storage service rather than rolling their own. This has got to be particularly true of archival content such as statements and tax documents, assuming the user even wants a cloud storage option (I assume that most eventually will).</p>
+<p>The primary drivers for cloud storage are backup, synchronizing data across devices and sharing content with others.
+<a href="http://box.net" target="_blank" rel="noopener">Box.net</a>, <a href="http://dropbox" target="_blank" rel="noopener">Dropbox</a>, <a href="http://www.apple.com/icloud/" target="_blank" rel="noopener">Apple iCloud</a> and <a href="http://blogs.msdn.com/b/b8/archive/2012/02/20/connecting-your-apps_2c00_-files_2c00_-pcs-and-devices-to-the-cloud-with-skydrive-and-windows-8.aspx" target="_blank" rel="noopener">Microsoft SkyDrive</a> are all leading contenders in the generic cloud storage space. Companies such as  <a href="http:doxo.com" target="_blank" rel="noopener">Doxo</a>, <a href="http://manilla.com" target="_blank" rel="noopener">Manilla</a> and <a href="http://volly.com" target="_blank" rel="noopener">Volly</a>, on the other hand, are <em>destinations</em>. That’s fine if there is functionality at those site worth visiting, but not if you only need them for delivery. 
+If you are an iCloud user, do you really want some of your data stored at Doxo?</p>
+<p>For most of the cloud-centric statement-delivery aggregators I think this spells doom because their value is largely based on being your filing cabinet in the sky. The one exception is Volly who, based on their existing relationships, may survive as a publisher rather than as a data repository. Pitney Bowes, however, is already a publisher and so, in the end, Volly (or one of the other solutions) will need to evolve if they are to survive.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Considering this set of issues is what led me to conclude several years ago that a standards-based and flexible approach is needed to address the delivery requirements of businesses. The solution must be able to morph and adapt over time and should not lock users nor businesses into a particular solution. I proposed and developed a standard publishing protocol by which an agent application can obtain feed data from a business. In the short term this agent is best exemplified by a desktop or mobile application that gets the content onto the consumer’s device and has access to the device’s notification system. The app can  evolve to integrate into whatever storage and synchronization solutions are dominant thus providing an onramp for content to be injected into the cloud storage system, but under consumer control of where their cloud storage is located.</p>
+<p>The feed approach gives you, the business, the most control because you can specify what to include in your feed, you control who can access the feed and you can directly obtain and control the analytics of what your customers do with the feed data (e.g. have they received, viewed and read what you’ve sent them). The feed incorporates the different end point requirements that I described in my <a href="/blog/2012/01/edelivery-requirements">previous post</a>, such as messages, alerts, documents (statements, bills, inserts), and bookmarks to your various web site assets.</p>
+<p>Perhaps what is most important is that this standards-based approach doesn’t force you to pick winners and losers, encourages competition and is adaptable. This seems better then you and your customer being locked in to a service from Doxo or some other service with their own proprietary APIs and portals. As examples of how flexible this picture is, a third party could write a Box.net or iCloud adapter that, with your permission, allowed your content to be directly injected into these systems. A mobile app could grab some of the content and a desktop or tablet app could show a fuller picture by grabbing monthly statements. <a href="http://bill.com" target="_blank" rel="noopener">Bill.com</a> could directly grab feeds from the sources their customers wish to share. Even Doxo could use your feed.</p>
+<img src="/images/posts/2012-01/cayoexpress.png" class="right" width="130">
+<p>To demonstrate and evangelize this approach I formed <a href="http://cayosystems.com" target="_blank" rel="noopener">Cayo Systems, Inc.</a> and developed a solution called <a href="http://cayoexpress.com" target="_blank" rel="noopener">Cayo Express</a>. The solution includes the definition of a standard business publishing protocol, a cross platform client app to aggregate content from any number of businesses, and a directory server where businesses can register their publishing servers and the client app connects to discover publisher end point information (URLs).</p>
+<p>The beauty of introducing this technology via a client desktop app is that you can deliver statement and tax documents precisely where most users want them, which is the place where they organize their other financial content come tax time. Of course by making this desktop app be a multi-provider client it means businesses don’t need to develop their own client <em>and</em> it is more likely that users will be willing to download the client. The beauty of the standards-based approach is that your customers don’t need to use Cayo’s client app if they don’t want to. If your customer would prefer their content be directly delivered to a cloud provider, they can do that too! Or they can use our client, and use Dropbox, iCloud or some other service to sync their data across their devices.</p>
+<p>My background from having developed digital signature, encryption and DRM features for Adobe Acrobat makes me well aware of the security requirements for this solution, and so the entire system is locked down so that users only receive content from businesses to which they have granted consent. This makes a fully trusted system  that is spam and phishing free.
+Cayo Express is only the first step in delivering this technology to wherever it is needed. We don’t plan to lock you in to our system: we just want to enable better B2C communications and have enough of your confidence that you allow us to enrich the engagement you have with your customers.</p>
+<p>You can request an invitation to view a demo video or download and try the Cayo Express desktop solution by emailing <a href="mailto:info@cayoexpress.com?Subject=Blog invite" target="_blank" rel="noopener">info@cayoexpress.com</a> or visiting the <a href="http://cayoexpress.com" target="_blank" rel="noopener">Cayo Express</a> web site and using the online form.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2007-2018 Jim Pravetz - Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

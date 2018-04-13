@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Express 3 Migration Issues
+  
+</title>
+
+<meta name="description" content="Today I migrated a web site from Express 2.5 to Express 3.0.0rc3. This is a non backward compatible version change. Express has a Migrating from 2.x to 3.x wiki page, but it doesn’t quite leave you pr">
+<meta name="keywords" content="development,nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express 3 Migration Issues">
+<meta property="og:url" content="http://jpravetz.bitbucket.io/blog/2012/08/express-3-migration-issues/index.html">
+<meta property="og:site_name" content="Jim Pravetz">
+<meta property="og:description" content="Today I migrated a web site from Express 2.5 to Express 3.0.0rc3. This is a non backward compatible version change. Express has a Migrating from 2.x to 3.x wiki page, but it doesn’t quite leave you pr">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-12T21:15:22.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Express 3 Migration Issues">
+<meta name="twitter:description" content="Today I migrated a web site from Express 2.5 to Express 3.0.0rc3. This is a non backward compatible version change. Express has a Migrating from 2.x to 3.x wiki page, but it doesn’t quite leave you pr">
+<meta name="twitter:creator" content="@jpravetz">
+
+
+  <link rel="alternative" href="/atom.xml" title="Jim Pravetz" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18367449-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Jim Pravetz</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Jim Pravetz</a></h1>
+    
+      <p class="subtitle">
+        Blog
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="/images/about/jim_agra_mug_160x160.jpg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIR/">AIR</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe/">Adobe</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BYOD/">BYOD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/">Facebook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Favourite-Place/">Favourite Place</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flex/">Flex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft/">Microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/">PDF</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/">PayPal</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playable/">Playable</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/">cycling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-signatures/">digital signatures</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drm/">drm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dropbox/">dropbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eDelivery/">eDelivery</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fail/">fail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/files/">files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/identity/">identity</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rails/">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regulation/">regulation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/">ruby</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scams/">scams</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlets/">servlets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strava/">strava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/">video</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualization/">virtualization</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/">2011</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/">2009</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/">2007</a><span class="archive-list-count">3</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/jpravetz" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-express-3-migration-issues" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Express 3 Migration Issues
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2012-08-17
+</span>
+
+    
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/development/">development</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>Today I migrated a web site from Express 2.5 to Express 3.0.0rc3.
+This is a non backward compatible version
+change. <a href="http://expressjs.com" target="_blank" rel="noopener">Express</a> has a
+<a href="https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x" target="_blank" rel="noopener">Migrating from 2.x to 3.x</a>
+wiki page, but it doesn’t quite leave you prepared for the more time
+consuming incompatibilities that you’ll need to fix. I’ll enumerate
+some of these differences here. Note that some of these issues may be
+ironed out in later releases of Express.</p>
+<a id="more"></a>
+<h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p>Flash cookie support is not included in Express 3.0. Just add the
+<a href="https://github.com/jaredhanson/connect-flash" target="_blank" rel="noopener">connect-flash</a> module
+to regain this functionality.  In my implementation I was using a
+dynamic helper to get the flash object. Now I need to explicitly
+attach the flash object to req.local using <code>res.render( &#39;/&#39;, {
+flash: req.flash() } );</code>. The req.flash() method returns an object.</p>
+<h2 id="EJS-Templates"><a href="#EJS-Templates" class="headerlink" title="EJS Templates"></a>EJS Templates</h2><p>Express 3.0.0rc3 did not include support for layouts and partials, leaving this
+functionality up to the template engine itself
+(<a href="https://github.com/visionmedia/ejs/issues/35" target="_blank" rel="noopener">see issue#35</a>).  EJS
+does not include this support, and it’s fairly critical. Fortunately
+the
+<a href="https://github.com/publicclass/express-partials" target="_blank" rel="noopener">express-partials</a>
+and it’s derivative project
+<a href="https://github.com/RandomEtc/ejs-locals" target="_blank" rel="noopener">ejs-locals</a> fill the void. I
+chose to use ejs-locals because it did a better job of resolving paths
+to partials and layout files. In fact I used the
+<a href="https://github.com/GothAck/ejs-locals" target="_blank" rel="noopener">GothAck fork off ejs-locals</a>
+because it has a fix that allows a global layout file to have a fixed
+location.</p>
+<p>The paths to your partials in your ejs files won’t necessarily work
+as-is. All paths for partials must be relative to the root ejs file
+that is being processed, or absolute relative to your root folder.</p>
+<p>Let’s look at this example directory structure to understand the new issues:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app</span><br><span class="line">+-+ views</span><br><span class="line">| +-- index.ejs</span><br><span class="line">| +-- layout.ejs</span><br><span class="line">| +-+ product</span><br><span class="line">| | +-- index.ejs</span><br><span class="line">| | +-+ partials</span><br><span class="line">| |   +-- p1.ejs</span><br><span class="line">| |   +-- p2.ejs</span><br></pre></td></tr></table></figure>
+<p>Partials can be coded either as paths relative to the root ejs file
+that is being rendered, or relative to the root of the views folder.</p>
+<figure class="highlight plain"><figcaption><span>Two ways to include p1 in product/index</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&apos;partials/p1&apos;) %&gt;</span><br><span class="line">&lt;%- partial(&apos;/product/partials/p1&apos;) %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>Two ways to include p2 in p1 when p1 is included in product/index</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&apos;partials/p2&apos;) %&gt;</span><br><span class="line">&lt;%- partial(&apos;/product/partials/p2&apos;) %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>This will not work when including p2 in p1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&apos;p2&apos;) %&gt;</span><br></pre></td></tr></table></figure>
+<p>Regarding layout files, I’m personally only interested in a top level
+layout. You include this as the default layout, and set up your
+ejs-locals environment as follows.</p>
+<figure class="highlight plain"><figcaption><span>Initializing ejs-locals and setting the default layout file</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.set(&apos;views&apos;, __dirname + &apos;/views&apos;);</span><br><span class="line">app.engine(&apos;ejs&apos;,require(&apos;ejs-locals&apos;));</span><br><span class="line">app.locals._layoutFile = &apos;/layout.ejs&apos;;</span><br><span class="line">app.set(&apos;view engine&apos;, &apos;ejs&apos;);</span><br></pre></td></tr></table></figure>
+<p>I suspect that some of this is going to be cleaned up, with possible direct
+support for ejs layout and partials in Express 3.0. Watch
+<a href="https://github.com/visionmedia/ejs/issues/35" target="_blank" rel="noopener">Issue#35</a> for updates.</p>
+<h2 id="Dynamic-Helpers"><a href="#Dynamic-Helpers" class="headerlink" title="Dynamic Helpers"></a>Dynamic Helpers</h2><p>I thought dynamic helpers were a clever idea: execute a function on
+demand, only when a template needs access to the results of that
+function. Dynamic helpers have been dropped in Express 3.0 in favor of
+using “middleware and req.locals”. The drawback is that you can no longer
+provide request-specific callback functionality, so you have to do
+your calculations up front.</p>
+<p>The app object and response object are really the only two ways you
+can insert variables into a template. Properties of the app object
+can be set at any time, however if you set the property to point to a
+function, you can’t pass the request and response objects to that
+function. You thus cannot provide a request-specific callback
+function, for example to do cookie processing.</p>
+<p>The request object is really the only way to send request-specific
+variables down to your template, and can’t be used to provide function
+callback. These variables are passed to the template via the
+<a href="http://expressjs.com/api.html#res.render" target="_blank" rel="noopener">render</a> method.</p>
+<p>Both the app and response object approaches are shown below.</p>
+<h3 id="Passing-Variables-to-Your-Templates-via-the-Response-Object"><a href="#Passing-Variables-to-Your-Templates-via-the-Response-Object" class="headerlink" title="Passing Variables to Your Templates via the Response Object"></a>Passing Variables to Your Templates via the Response Object</h3><p>Variables can be passed down to a template as a parameter to the
+response object, but functions cannot. Here is an example showing how to set and access
+these variables.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var locals = &#123; title: &apos;My page title&apos;, includes: &#123;charting: true&#125; &#125;;</span><br><span class="line">app.render( &apos;mypage&apos;, locals );</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>Template File</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if( locals.includes.charting ) &#123; %&gt;</span><br><span class="line">&lt;p&gt;Charting is included&lt;/p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;p&gt;locals:&lt;%- JSON.stringify(locals) %&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>Functions cannot be passed down via the response object. That means
+there is no replacement for the template-initiated processing that dynamic
+helpers provided. </p>
+<p>Another trick is to use middleware to add properties or methods to the request
+object then, on render, pass derived properties to the render
+method. This is how the <a href="https://github.com/jaredhanson/connect-flash" target="_blank" rel="noopener">connect-flash</a> modules operates. </p>
+<h3 id="Passing-Variables-to-Your-Templates-via-the-App-Object"><a href="#Passing-Variables-to-Your-Templates-via-the-App-Object" class="headerlink" title="Passing Variables to Your Templates via the App Object"></a>Passing Variables to Your Templates via the App Object</h3><p>You can pass app-level variables to your templates by attaching
+properties _or_ functions to app.settings. Although this is referred to as
+<em>app.locals</em> in the documentation, you can’t actually set
+<em>app.locals.myvar</em> to a value and see this in your template. I presume
+this is another case of documentation written for people who already
+understand the application, meaning it wasn’t written for me.</p>
+<p>To set an app-level variable or function you either call <em>app.set()</em> or set a
+property of <em>app.settings</em> as shown below.</p>
+<figure class="highlight plain"><figcaption><span>In app.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.set(&apos;tLaunch&apos;,new Date());</span><br><span class="line">app.settings.appName = &apos;MyApp&apos;;    // Equivalent to using app.set(appName,&apos;MyApp&apos;);</span><br><span class="line">app.set(&apos;appVersion&apos;,function() &#123; config.getAppVersion() &#125;);</span><br></pre></td></tr></table></figure>
+<p>To read the app-level variable in your template you reference
+<em>settings.myvar</em>. To call the function you call
+<em>settings.myfunc()</em>. Remember, you can’t pass any parameters to
+the function, so you can’t get request-specific data using this function.</p>
+<figure class="highlight plain"><figcaption><span>Template File</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;The time my app was launched:&lt;%- settings.tLaunch.toString() %&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;App Name:&lt;%- settings.appName %&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;App Version:&lt;%- settings.appVersion() %&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Listening"><a href="#Listening" class="headerlink" title="Listening"></a>Listening</h2><p>I spent a disproportionate amount of time tracking down changes in how
+SSL parameters are passed to the express app object. The new syntax
+can be made to work by calling
+<code>http.createServer(app).listen(port)</code> or
+<code>https.createServer(options,app).listen(port)</code>. This is covered in
+the
+<a href="https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x" target="_blank" rel="noopener">migration document</a>
+but I missed it. My bad.</p>
+<figure class="highlight plain"><figcaption><span>Starting an HTTP server</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line">var app = express();</span><br><span class="line">app.get(&apos;*&apos;, function(req,res) &#123;</span><br><span class="line">  	res.writeHead(200, &#123;&apos;Content-Type&apos;: &apos;text/plain&apos;&#125;);</span><br><span class="line">   	res.end( &quot;Listening on port &quot; + port );</span><br><span class="line">&#125;);</span><br><span class="line">http.createServer(app).listen(port);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>Starting an HTTPS server</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var https = require(&apos;https&apos;);</span><br><span class="line">var options = &#123; key: key, cert: cert &#125;;</span><br><span class="line">var app = express();</span><br><span class="line">app.get(&apos;*&apos;, function(req,res) &#123;</span><br><span class="line">  	res.writeHead(200, &#123;&apos;Content-Type&apos;: &apos;text/plain&apos;&#125;);</span><br><span class="line">   	res.end( &quot;Listening on port &quot; + port );</span><br><span class="line">&#125;);</span><br><span class="line">https.createServer(options,app).listen(port);</span><br></pre></td></tr></table></figure>
+<h2 id="A-Final-Note"><a href="#A-Final-Note" class="headerlink" title="A Final Note"></a>A Final Note</h2><p>Express 3.0 is still in flux and you’re likely to see some changes
+before it’s final. If you find yourself using a patched version of
+module to get around compatibility issues, fork the module on github
+and follow
+<a href="http://debuggable.com/posts/how-to-fork-patch-npm-modules:4e2eb9f3-e584-44be-b1a9-3db7cbdd56cb" target="_blank" rel="noopener">these instructions</a>.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2007-2018 Jim Pravetz - Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Solving e-delivery: fundamental requirements
+  
+</title>
+
+<meta name="description" content="This is part three of a series on e-delivery: &amp;lt;%- partial_page(‘_partials/edelivery-index.html’) %&amp;gt; You are a bank, biller, health care provider, insurer, payroll or other businesses. You curren">
+<meta name="keywords" content="security,eDelivery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solving e-delivery: fundamental requirements">
+<meta property="og:url" content="http://jpravetz.bitbucket.io/blog/2012/01/edelivery-requirements/index.html">
+<meta property="og:site_name" content="Jim Pravetz">
+<meta property="og:description" content="This is part three of a series on e-delivery: &amp;lt;%- partial_page(‘_partials/edelivery-index.html’) %&amp;gt; You are a bank, biller, health care provider, insurer, payroll or other businesses. You curren">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://jpravetz.bitbucket.io/images/posts/2012-01/brandedapp.jpg">
+<meta property="og:updated_time" content="2018-04-12T22:06:49.958Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Solving e-delivery: fundamental requirements">
+<meta name="twitter:description" content="This is part three of a series on e-delivery: &amp;lt;%- partial_page(‘_partials/edelivery-index.html’) %&amp;gt; You are a bank, biller, health care provider, insurer, payroll or other businesses. You curren">
+<meta name="twitter:image" content="http://jpravetz.bitbucket.io/images/posts/2012-01/brandedapp.jpg">
+<meta name="twitter:creator" content="@jpravetz">
+
+
+  <link rel="alternative" href="/atom.xml" title="Jim Pravetz" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18367449-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Jim Pravetz</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Jim Pravetz</a></h1>
+    
+      <p class="subtitle">
+        Blog
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="/images/about/jim_agra_mug_160x160.jpg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIR/">AIR</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe/">Adobe</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BYOD/">BYOD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/">Facebook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Favourite-Place/">Favourite Place</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flex/">Flex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft/">Microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/">PDF</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/">PayPal</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playable/">Playable</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/">cycling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-signatures/">digital signatures</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drm/">drm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dropbox/">dropbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eDelivery/">eDelivery</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fail/">fail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/files/">files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/identity/">identity</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rails/">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regulation/">regulation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/">ruby</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scams/">scams</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlets/">servlets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strava/">strava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/">video</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualization/">virtualization</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/">2011</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/">2009</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/">2007</a><span class="archive-list-count">3</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/jpravetz" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-edelivery-requirements" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Solving e-delivery: fundamental requirements
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2012-01-06
+</span>
+
+    
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eDelivery/">eDelivery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/security/">security</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>This is part three of a series on e-delivery:
+&lt;%- partial_page(‘_partials/edelivery-index.html’) %&gt;</p>
+<p>You are a bank, biller, health care provider, insurer, payroll or other businesses. You currently do not have a way to push <a href="/blog/2012/01/edelivery-of-statements-broken">confidential documents</a> and <a href="/blog/2012/01/edelivery-of-secure-mail">messages</a> to end users and to notify your customers (users) of new content or messages.</p>
+<p>How do you send messages and documents to the user, and make them aware that they have new content? For a message solution to work you need to make notifications available to the user in a place that your customer frequents. You don’t send the actual message or document via email because of security and reliability issues.  Instead you are putting the message or document on your own web site and, for important content, sending users an e-pickup notice via email. But  content is only retrieved when users get around to it, which in many cases never happens.  </p>
+<a id="more"></a>
+<h3 id="An-aggregation-app-with-consumer-driven-design"><a href="#An-aggregation-app-with-consumer-driven-design" class="headerlink" title="An aggregation app with consumer-driven design"></a>An aggregation app with consumer-driven design</h3><img src="/images/posts/2012-01/brandedapp.jpg" class="right" width="253" height="169" title="This branded app is so engaging and useful. I" alt="ll be sure to open it more then once.">
+<p>What could be a better approach to sending users messages and documents? 
+Is there a way to send the actual content _to_ users so you don’t need to send a separate e-pickup notice? 
+A solution would ideally put new content where consumers want this content, which is on the device they are using. And notifications will also be available where the user will see them. One way of doing this is to write your own native app and deliver content via this app. The app could retreive and store files locally and hook into your device’s notification system. But it’s difficult to get users to download <em>your</em> app, and downloading apps becomes a burden to users if you consider that users have upwards of 20 business relationships from which to get notifications. Not to mention that developing custom apps <a href="http://kentnguyen.com/ios/what-does-it-take-to-make-an-ios-app/" target="_blank" rel="noopener">is expensive</a>.</p>
+<p>How about a generic app that can aggregate content from multiple businesses? This could be a web or native app. If a web app you have to rely on the user finding enough utility in the app to want to use it in the first place, the user visiting the web app with adequate frequency, and both you and your customer trusting the web app with credentials and sensitive content from 20+ businesses. A web app won’t work if it is ever important that your customers receive immediate notification of new content, unless your customer keeps their web app open all the time.</p>
+<p>What if the aggregation app is a desktop or mobile (native) app? This would allow the app to be always on <em>and</em> hook into whatever the OS platforms notifications mechanism is. It would also allow you to deliver documents to where most users want them delivered, which is _to_ them, and for users to maintain control of their documents and decide on their own backup strategy.</p>
+<p>Your solution needs consumer-driven design, at least to the extend that you convince consumers to use what you have to offer.
+What are your customer’s needs? For the consumer to want to participate, they must see value and not be frustrated by your offering.  iTunes streamlines the music and podcast download process and keeps your media organized: your solution should help your customer do the same for financial records. Should the solution also help your customer with backup and accessing and/or synchronizing their content across devices? Would hooks to allow them to share certain records with their accountant or spouse be helpful? What about paying bills and other related money transactions?</p>
+<p>Could the browser manufacturers build in the notification and delivery hooks that you need? This might be interesting, but it’s currently not on the horizon.</p>
+<h3 id="Protocols"><a href="#Protocols" class="headerlink" title="Protocols"></a>Protocols</h3><p>How would you build the bridge between your business and the aggregation app? This is an issue to resolve regardless of whether the app is desktop, web or a browser. Do you have _N_ different web app solutions each proposing their own onboarding API? What if the solution is a desktop app or a browser? These cannot have APIs to which content can be pushed. The protocol solution must therefore be a feed API along the conceptual lines of RSS or atom feeds where the app contacts <em>your servers</em> to retrieve customer information. This would allow any approved app to access your data. </p>
+<p>What content should the feed protocol handle? This is your channel for communicating with your customers, so you may want it to be reasonably rich. At a minimum it should handle basic email-like messages. 140-character alerts make sense as well. We would need to include documents such as statements and tax documents that also need to be pushed to users. What about targeted microblog information from your company, or promotions, or URLs for web site access and support? Depending on the agent that is connecting to your feed, the specific agent may or may not be able to handle each of these different feed data types, or <em>end-points</em> as I prefer to call them.</p>
+<p>How do you authenticate the agent connecting to your data feed? You want to both authenticate the user and possibly the agent as well. The user should be authenticated using a token system such as <a href="http://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> so that the user does not need to expose web credentials to the agent. Authenticating the agent application itself could be just as simple, but if the agent is a client application it becomes more difficult for the client app to protect the tokens from being stolen from binary code. You can either accept this situation or look for DRM-like protection of client keys. This is where authentication gets a bit more complicated and you start having to look for experienced, outside help to activate client apps and provide a mechanism by which client app tokens are authenticated.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2007-2018 Jim Pravetz - Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

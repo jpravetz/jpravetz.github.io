@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Comodo issues nine fraudulent, high value certificates
+  
+</title>
+
+<meta name="description" content="Peter Bright posted a terrific piece over at Ars Technica describing the fraudulent issuance of nine high value SSL certificates by Comodo. This included such top level domain certificates as www.goog">
+<meta name="keywords" content="security">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comodo issues nine fraudulent, high value certificates">
+<meta property="og:url" content="http://jpravetz.bitbucket.io/blog/2011/03/comodo-issues-nine-fraudulent-high-value-cert/index.html">
+<meta property="og:site_name" content="Jim Pravetz">
+<meta property="og:description" content="Peter Bright posted a terrific piece over at Ars Technica describing the fraudulent issuance of nine high value SSL certificates by Comodo. This included such top level domain certificates as www.goog">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-12T22:03:44.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Comodo issues nine fraudulent, high value certificates">
+<meta name="twitter:description" content="Peter Bright posted a terrific piece over at Ars Technica describing the fraudulent issuance of nine high value SSL certificates by Comodo. This included such top level domain certificates as www.goog">
+<meta name="twitter:creator" content="@jpravetz">
+
+
+  <link rel="alternative" href="/atom.xml" title="Jim Pravetz" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18367449-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <!-- End Google Analytics -->
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Jim Pravetz</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Jim Pravetz</a></h1>
+    
+      <p class="subtitle">
+        Blog
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="/images/about/jim_agra_mug_160x160.jpg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">Tag</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AIR/">AIR</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ActionScript/">ActionScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Adobe/">Adobe</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BYOD/">BYOD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Facebook/">Facebook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Favourite-Place/">Favourite Place</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flex/">Flex</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microsoft/">Microsoft</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PDF/">PDF</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PayPal/">PayPal</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playable/">Playable</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cycling/">cycling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/digital-signatures/">digital signatures</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drm/">drm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dropbox/">dropbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eDelivery/">eDelivery</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fail/">fail</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/files/">files</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/identity/">identity</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kml/">kml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rails/">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regulation/">regulation</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ruby/">ruby</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scams/">scams</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlets/">servlets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strava/">strava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/training/">training</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/">video</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualization/">virtualization</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">Archive</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/">2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/">2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/">2012</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/">2011</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/">2010</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/">2009</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/">2007</a><span class="archive-list-count">3</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/jpravetz" title="Github" target="_blank" rel="noopener">Github</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-comodo-issues-nine-fraudulent-high-value-cert" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Comodo issues nine fraudulent, high value certificates
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2011-03-24
+</span>
+
+    
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/security/">security</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>Peter Bright posted a <a href="http://arstechnica.com/security/news/2011/03/how-the-comodo-certificate-fraud-calls-ca-trust-into-question.ars?comments=1#comments-bar" target="_blank" rel="noopener">terrific piece</a> over at Ars Technica describing the fraudulent issuance of nine high value SSL certificates by Comodo. This included such top level domain certificates as <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>, login.yahoo.com and login.skype.com and addons.mozilla.org. Other equally good reads are the <a href="https://blog.torproject.org/blog/detecting-certificate-authority-compromises-and-web-browser-collusion" target="_blank" rel="noopener">Tor site detection of the problem</a> and <a href="https://www.comodo.com/Comodo-Fraud-Incident-2011-03-23.html" target="_blank" rel="noopener">Comodo's explanation</a>. I'm sure Comodo's CEO, Melih Abdulhayoglu, is having fun this week.</p>
+<p>The case reveals the instrinsic problems with PKI that we've all been aware of for a long time.</p>
+<p>I am a bit surprised by a couple of things, though suprised is perhaps too strong a word. <a id="more"></a>
+The first is that a Registration Authority (RA) account could have been compromised for what appears to be a top level certificate. I'm sure this account was well protected, and it's true we don't yet know the nature of the compromise, but I had somehow imagined that on-site access would be required, or multiple approvals if the RA user was off-site. This is a somewhat silly expectation, given that SSL certs go for $50, a price which dictates a certain level of process automation. I guess I would have been less surprised with flaws in the vetting process then flaws with RA account authentication.</p>
+<p>The second surprise is with how browsers treat failed revocation checks, namely that they fail gracefully. I've been aware of this issue in the past, but during my time away from PKI I had perhaps imagined that improvements had been made. Browsers generally do not apply strict rules because if they did many sites' SSL certs would raise warnings which would, of course, be ignored by end users.</p>
+<p>I do this myself: I run the <a href="https://addons.mozilla.org/en-us/firefox/addon/certificate-patrol/" target="_blank" rel="noopener">Certificate Patrol add-on</a> for Firefox but yet ignore many of it's warnings because, in spurts, there are just too many (<em>e.g.</em> for a period of a week or more Citicard's site resulted in a warning for every new page that was loaded). Strict checking isn't an issue only because the user would see too many warnings. There are also scalability and performance issues for revocation responders and, in particular OCSP responders.</p>
+<p>PKI is hard and these issues are not easy to solve. We did a fantastic job with PKI in Adobe Acrobat, but that was in a different context. In the Acrobat context validating a signature and certificate was done  automatically, but it was also a more explicit action. For that action  you could take the time to review the details of a revocation warning  failure. In the web context you are constantly being hit by new sites and new certificates and users expect to be able to continue to surf the web without seeing or knowing what to do with security warnings.</p>
+<p>Those of us working on Acrobat's PKI engine would often scoff at the <em>108 root certificates</em> originally embedded in Netscape and Internet Explorer. With a system only as strong as it's weakest link, and 108 roots from many different vendors scattered across the globe, it was easy to imagine a few weak SSL certificates being issued. Perhaps it's a testament to those in the industry that over the ensuing years there have in fact been so few compromises of this nature.</p>
+<p>In Acrobat we did not embed 108 difficult-to-revoke root certificates because we could not provide oversight for these CAs and because their certificate issuance policies did not match our policies or key use. Instead we embedded just one Adobe root certificate from which we could cross certify high value CAs to issue document signing certificates.</p>
+<p>This gave us the control to revoke roots, but this wasn't a magic solution. It wouldn't protect against an intermediate CA having a compromised RA account, and in practise we probably couldn't revoke a compromised intermediate CA certificate because doing so would break too many signatures and workflows. We also had difficulties rationalizing support for high assurance, sign-in-blood, hardware-based document signing certificates (<em>e.g.</em> GPO signatures) with more accessible certificates that enable a user to sign on their desktop.</p>
+<p>How do you convey to a user the difference between high and not-so-high assurance signatures? How do you express trust for a bank certificate that is guarded in hardware and at the same time support SSL certificates for developers? A few years back Microsoft and the other browser vendors introduced support for <a href="http://en.wikipedia.org/wiki/Extended_Validation_Certificate" target="_blank" rel="noopener">EVSSL</a> certificates, which I believe was a good idea. Even though many users may not notice the presence or, more importantly, lack of presence of EVSSL security indicators in the browser chrome, they are a good step that can only be improved on as browsers get better with their security indicators.</p>
+<p>Another suggestion is to allow users to group certain functions, such as access to financial sites, and indicate that these always require EVSSL certificates with no cross site or non SSL access, and then have these rules administered automatically. This too could be difficult to administer and explain, at least initially. It is all made more difficult by the fact that there are so many software stacks that use SSL. You might convince one browser to, for example, always check a certificate domain against the URL domain, but you won't get them all to do this. An attacker will choose the soft targets first.</p>
+<p>PKI security is difficult but good SSL PKI security doesn't really matter if our DNS lookup system can be compromised, which it can. DNS compromises haven't really been seen in the wild yet, but they'd allow MiTM attacks that not only compromise revocation checking, but the SSL connection itself for many software stacks.</p>
+<p>Fortunately there are smart people working on solving the DNS problem with <a href="http://www.dnssec.net/" target="_blank" rel="noopener">DNSSec</a>. Security never seems to be glamorous, but is criticaly important, and my hat goes off to all those in the industry who's work is often only appreciated when a high profile problem is avoided.</p>
+<p>Update: <a href="http://blog.mozilla.com/security/2011/03/25/comodo-certificate-issue-follow-up/" target="_blank" rel="noopener">Mozilla has posted their response</a>&nbsp;to the Comodo breach.</p>
+<p>Update: EFF's Chris Palmer put together <a href="https://docs.google.com/present/view?id=df9sn445_206ff3kn9gs&amp;pli=1" target="_blank" rel="noopener">this slide presentation</a> essentially recommending that end user's maintain a white list of the sites and associated certificates that they trust. This amounts to a parallel trust system. I agree with this, though I'll twist this a bit for my own product interest. My interest has been transactions with financial institutions and I've worked on a couple of products in this space during the past few years. In both situations the model has been for the products to be able to connect with multiple financial or other businesses and in both situations I've maintained my own trust white list of businesses and associated certificates. In neither case do I ask end users to make any security decisions whatsoever, beyond initial use of my product. You simply cannot ask end users to make such decisions.</p>
+<h3>Update:</h3>
+<p>05 APR 2011 - More <a href="https://www.eff.org/deeplinks/2011/04/unqualified-names-ssl-observatory" target="_blank" rel="noopener">analysis over at EFF</a> shows that certificate authorities have issued more then 37,000 certificates to unqualified names. More reason for maintaining a parallel white list system.</p>
+<p>06 FEB 2012 - <a href="http://arstechnica.com/business/guides/2012/02/google-strips-chrome-of-ssl-revocation-checking.ars" target="_blank" rel="noopener">Google to strip Chrome of SSL revocation checking</a> and will instead push black lists with periodic updates.
+</p>
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2007-2018 Jim Pravetz - Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
