@@ -228,8 +228,13 @@ I ran into a number of head banger issues that were time consuming to resolve. A
       <div class="article-entry">
         
           <p><a href="https://aurelia.io/" target="_blank" rel="noopener">Aurelia</a> is a front-end framework along the lines of <a href="https://angularjs.org/" target="_blank" rel="noopener">Angular</a> and <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs</a>.
-The <a href="https://aurelia.io/docs/cli" target="_blank" rel="noopener">Aurelia CLI</a> (currently v0.33.1) <a href="https://github.com/aurelia/skeleton-navigation/pull/769" target="_blank" rel="noopener">does not support</a> <a href="http://pugjs.org" target="_blank" rel="noopener">pug</a> templates.
-This post shows how to setup pug once you’ve installed a new webpack4-based Aurelia project.</p>
+The <a href="https://aurelia.io/docs/cli" target="_blank" rel="noopener">Aurelia CLI</a> (currently v0.33.1) <a href="https://github.com/aurelia/skeleton-navigation/pull/769" target="_blank" rel="noopener">does not support</a> <a href="http://pugjs.org" target="_blank" rel="noopener">pug</a> templates.</p>
+<p>This post shows my effort so far to configure <a href="http://pugjs.org" target="_blank" rel="noopener">pug</a> on top of a new webpack4-based Aurelia project.
+There are two outstanding issues that I have not yet resolved:</p>
+<ul>
+<li>Pug file <code>require</code> statements are not resolving the css file (<em>e.g.</em> <code>require(from=&#39;app.styl&#39;)</code>)</li>
+<li>Have not yet tackled the issue of passing <code>locals</code> to index.pug</li>
+</ul>
           <p>
             <a href="/blog/2018/05/webpack-pug-aurelia/">
               Read More
